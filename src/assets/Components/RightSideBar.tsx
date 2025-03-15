@@ -10,7 +10,7 @@ export default function RightSideBar({showRightSideBar}:any) {
 
       <div className="SideBar___body bg-[#E6E7E9] w-[344.25px] h-screen mt-4 mr-4 p-8 scroll-smooth overflow-y-auto">
             
-             <div className=" max-sm:block items-center ml-auto w-[30px] max-xl:block max-2xl:hidden
+             <div className=" hidden max-sm:block items-center ml-auto w-[30px] max-xl:block max-2xl:hidden
                        cursor-pointer aspect-square border-white border-1 shadow  " onClick={showRightSideBar}>
                             <div className="flex items-center w-full h-full justify-center">
                             <LiaTimesSolid className="text-2xl max-2xl:text-3xl text-center" />
