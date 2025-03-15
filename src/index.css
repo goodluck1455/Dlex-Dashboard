@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+@import "@fontsource/roboto";
+
+
+body{
+    background-color: #F5F5F5;
+    font-family: 'Roboto'; 
+   
+}
+
+
+.SideBar___body{
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    scrollbar-width: none; 
+}
+
+.shadow{
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+.jibfhusb{
+/* Rectangle 1031 */
+/* Course Progress */
+/* 63% */
+
+/* Icon Base */
+
+position: absolute;
+width: 24px;
+height: 24px;
+left: calc(50% - 24px/2);
+top: calc(50% - 24px/2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+.NBSHF{
+    /* Custom */
+
+position: absolute;
+width: 181.69px;
+height: 177.86px;
+left: 838.83px;
+top: 129.88px;
+
+border-radius: 11.475px;
+
+
+/* Rectangle 685 */
+
+position: absolute;
+left: 0px;
+right: 0px;
+top: 0px;
+bottom: 0px;
+
+background: #E1F5FD;
+border-radius: 7.65px;
+
+
+/* 2h ago */
+
+position: absolute;
+width: 43px;
+height: 16px;
+left: 19.12px;
+bottom: 20.34px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 11.475px;
+line-height: 140%;
+/* identical to box height, or 16px */
+display: flex;
+align-items: center;
+letter-spacing: 0.286875px;
+text-transform: uppercase;
+
+/* On Surface / Dark / High-emphasis */
+color: rgba(24, 24, 25, 0.9);
+
+
+
+/* Frame 1024 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 7.65px;
+
+position: absolute;
+width: 92px;
+height: 68.43px;
+left: 19.12px;
+top: 19.13px;
+
+
+
+/* 24px / Action / check_circle_outline */
+
+width: 22.95px;
+height: 22.95px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #4A4DE6;
+
+
+/* Frame 1023 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 3.83px;
+
+width: 92px;
+height: 37.83px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Reading */
+
+width: 54px;
+height: 18px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 15.3px;
+line-height: 120%;
+/* or 18px */
+display: flex;
+align-items: center;
+letter-spacing: -0.3825px;
+
+/* On Surface / Dark / High-emphasis */
+color: rgba(24, 24, 25, 0.9);
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 24 words per week */
+
+width: 92px;
+height: 16px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 11.475px;
+line-height: 140%;
+/* identical to box height, or 16px */
+display: flex;
+align-items: center;
+letter-spacing: -0.286875px;
+
+/* On Surface / Dark / Low-emphasis */
+color: rgba(24, 24, 25, 0.42);
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+}
