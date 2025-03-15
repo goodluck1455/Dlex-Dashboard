@@ -26,12 +26,26 @@ body{
 /* 63% */
 
 /* Icon Base */
+/* +99 */
 
 position: absolute;
-width: 24px;
-height: 24px;
-left: calc(50% - 24px/2);
-top: calc(50% - 24px/2);
+left: 18.75%;
+right: 19.16%;
+top: 25%;
+bottom: 22.71%;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 11.475px;
+line-height: 140%;
+/* identical to box height, or 16px */
+text-align: center;
+letter-spacing: -0.286875px;
+
+color: #28439D;
+
+
 
 
 

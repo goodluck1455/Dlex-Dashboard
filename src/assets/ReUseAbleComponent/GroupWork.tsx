@@ -23,7 +23,7 @@ export default function GroupWork() {
 
 
                 </div>
-                <div>
+                <div className="cursor-pointer ">
                   <img src="./images/notificationsBell.svg" alt="" />
                 </div>
 

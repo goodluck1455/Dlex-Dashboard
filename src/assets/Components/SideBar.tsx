@@ -157,7 +157,7 @@ export default function SideBar() {
                     </div>
                 </section>
 
-                <section>
+                <section className="mt-36">
                     <div className="bg-[#342BC2] w-full h-[90px] rounded-[6.41927px] p-3">
                                         <div className="flex justify-between">
                                             <h3 className="text-white">Storage</h3>
@@ -174,13 +174,13 @@ export default function SideBar() {
 
                     </div>
                 </section>
-                                                <section>
+                                                <section className="">
                                                 <div className="mt-6">
                                                 <hr  className="text-[#E6E7E9] opacity-[0.2]"/>
                                                 </div>
 
                                                 <div className="
-                                        p-4 justify-between mt-1.5
+                                        p-4 justify-between mt-1.5 
                                         w-full h-[56.17px] flex items-center gap-2">
 
                         <div className="flex items-center gap-2.5 ">
