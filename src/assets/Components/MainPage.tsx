@@ -164,6 +164,7 @@ export default function MainPage() {
          </div>
 
          <div className={`${rightbar ? "max-lg:block  max-lg:absolute": "max-lg:hidden"}  
+         ${rightbar ? "max-sm:block  max-sm:absolute": "max-sm:hidden"} 
          ${rightbar ? "max-xl:block  max-xl:absolute": "max-xl:hidden"} max-lg:z-20`}>
        <RightSideBar  showRightSideBar={showRightSideBar}/>
          </div>

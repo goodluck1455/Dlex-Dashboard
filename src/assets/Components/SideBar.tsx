@@ -2,9 +2,9 @@
 import { LiaTimesSolid } from "react-icons/lia";
 // import { useState } from "react";
 import { useNavbarContext } from "./NavbarContext";
-import {motion } from "framer-motion";
+import {motion, AnimatePresence } from "framer-motion";
 
-import { fadeIn } from "../Components/Variant";
+// import { fadeIn } from "../Components/Variant";
 
 
 export default function SideBar() {
@@ -17,10 +17,13 @@ export default function SideBar() {
     }
 
   return (
+    <AnimatePresence mode="wait">
     <motion.div 
-    variants={fadeIn("right", 0.3, "scale")}
-    initial="hidden"
-    whileInView={"show"}
+    initial={{opacity:0, x:-100}}
+    animate={{opacity:1, x:0}}
+     exit={{opacity:0, x:-100}}
+     transition={{ duration: 0.5, ease: "easeInOut" }} 
+    
     
     className={`SideBar___body max-xl:absolute max-2xl:absolute  max-xl:z-30 bg-[#3C38CE] 
         ${navbar ? "max-sm:block z-30":""}  ${navbar ? "max-xl:block": "max-xl:hidden"} 
@@ -199,6 +202,7 @@ export default function SideBar() {
 
       </section>
     </motion.div>
+    </AnimatePresence>
   )
 }
 
