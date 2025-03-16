@@ -26,7 +26,7 @@ export default function SideBar() {
     
     
     className={`SideBar___body max-xl:absolute   max-xl:z-30 bg-[#3C38CE] 
-        ${navbar ? "max-sm:block z-30":""}  ${navbar ? "max-xl:block": "max-xl:hidden"} 
+        ${navbar ? "max-sm:block z-30":"max-sm:hidden"}  ${navbar ? "max-xl:block": "max-xl:hidden"} 
       
     w-[250px]  top-0 left-0 h-screen scroll-smooth overflow-y-auto scrollbar-hide`}>
       <section className="ml-[1rem] mr-[1rem] mt-[2rem] ">
