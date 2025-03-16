@@ -5,7 +5,8 @@ import  { createContext, useContext, useState, ReactNode } from "react";
 
 // Define the context type
 interface NavbarContextType {
-   
+  fullName:string;
+    setfullName: React.Dispatch<React.SetStateAction<string>>;
     navbar: boolean;
     setNavbar: React.Dispatch<React.SetStateAction<boolean>>;
     rightbar: boolean;
@@ -23,10 +24,10 @@ export const NavbarProvider = ({ children }: { children: ReactNode }) => {
 
   const [navbar, setNavbar] = useState(false);
   const [rightbar, setRightbar] = useState(false);
-
+  const [fullName, setfullName] = useState<string>("");
  
   return (
-    <NavbarContext.Provider value={{  setNavbar, navbar, rightbar, setRightbar }}>
+    <NavbarContext.Provider value={{  setNavbar, navbar, rightbar, setRightbar, fullName, setfullName }}>
       {children}
     </NavbarContext.Provider>
   );

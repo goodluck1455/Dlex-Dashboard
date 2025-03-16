@@ -25,9 +25,9 @@ export default function SideBar() {
      transition={{ duration: 0.5, ease: "easeInOut" }} 
     
     
-    className={`SideBar___body max-xl:absolute max-2xl:absolute  max-xl:z-30 bg-[#3C38CE] 
+    className={`SideBar___body max-xl:absolute   max-xl:z-30 bg-[#3C38CE] 
         ${navbar ? "max-sm:block z-30":""}  ${navbar ? "max-xl:block": "max-xl:hidden"} 
-          ${navbar ? "max-2xl:block": "max-2xl:hidden"} 
+      
     w-[250px]  top-0 left-0 h-screen scroll-smooth overflow-y-auto scrollbar-hide`}>
       <section className="ml-[1rem] mr-[1rem] mt-[2rem] ">
           <div className="flex items-center text-white gap-1 place-items-center">
@@ -38,7 +38,7 @@ export default function SideBar() {
                 <p className="text-2xl font-bold">Dlex</p>
             </div>
 
-            <div className="hidden max-sm:block items-center ml-auto w-[30px] max-xl:block max-2xl:block
+            <div className="hidden max-sm:block items-center ml-auto w-[30px] max-xl:block 
            cursor-pointer aspect-square border-white border-1 shadow  " onClick={showSideBar}>
                 <div className="flex items-center w-full h-full justify-center">
                 <LiaTimesSolid className="text-2xl max-2xl:text-3xl text-center" />
@@ -157,8 +157,9 @@ export default function SideBar() {
                     </div>
                 </section>
 
-                <section className="mt-36">
-                    <div className="bg-[#342BC2] w-full h-[90px] rounded-[6.41927px] p-3">
+                <section className="">
+                   
+                    <div className="bg-[#342BC2] w-full h-[90px] rounded-[6.41927px] p-3 mt-auto">
                                         <div className="flex justify-between">
                                             <h3 className="text-white">Storage</h3>
                                             <p className="text-[#ffffffb3]">Upgrade</p>
@@ -174,7 +175,7 @@ export default function SideBar() {
 
                     </div>
                 </section>
-                                                <section className="">
+                                                <section className="pb-4">
                                                 <div className="mt-6">
                                                 <hr  className="text-[#E6E7E9] opacity-[0.2]"/>
                                                 </div>

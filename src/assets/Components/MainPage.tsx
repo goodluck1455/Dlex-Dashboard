@@ -27,7 +27,7 @@ export default function MainPage() {
 
 
   return (
-    <div className=" flex gap-8 SideBar___body  top-0 left-0 h-screen  max-xl:gap-1
+    <div className=" flex gap-8 SideBar___body  top-0 left-0 h-screen  max-xl:gap-1 max-2xl:gap-2
     scrollbar-hide max-sm:justify-center max-sm:gap-0">
 
           

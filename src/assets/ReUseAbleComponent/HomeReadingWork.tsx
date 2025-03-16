@@ -8,7 +8,7 @@ import { fadeIn } from "../Components/Variant";
 export default function HomeReadingWork() {
   return (
     <>
-     <div className="flex gap-8 w-full max-sm:gap-4 max-xl:gap-4">
+     <div className="flex gap-8 w-full max-sm:gap-4 max-xl:gap-4 max-2xl:gap-3 ">
 
                 <motion.div 
                   variants={fadeIn("up", 0.3, "scale")}

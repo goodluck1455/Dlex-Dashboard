@@ -14,7 +14,7 @@ export default function SearchBar() {
      // setIsOpen(!isOpen);
   }
   return (
-    <div className="hidden max-xl:block max-sm:hidden max-2xl:block max-lg:hidden">
+    <div className="hidden max-xl:block max-sm:hidden  max-lg:hidden">
     <div className="flex items-center gap-1.5 max-2xl:mt-2">
         <div onClick={showSideBar} >
         <img src="./images/NavBar.svg" alt="" className="w-[3rem] max-2xl:w-[4rem]"/>

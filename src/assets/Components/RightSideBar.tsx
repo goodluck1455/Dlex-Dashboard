@@ -1,10 +1,42 @@
 // import React from 'react'
 import { LiaTimesSolid } from "react-icons/lia";
 import CourseProgress from "../ReUseAbleComponent/CourseProgress";
+import { useNavbarContext } from "./NavbarContext";
 // import { useNavbarContext } from "./NavbarContext";
+import { auth, db } from "../firebaseConfig";
+import { onAuthStateChanged } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+// import { useNavbarContext } from "./NavbarContext";
+import { useEffect } from "react";
+
 
 export default function RightSideBar({showRightSideBar}:any) {
+  const {fullName, setfullName} = useNavbarContext();
+
    
+  // const user = auth.currentUser;
+  
+    useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, async (currentUser?:any) => {
+        if (currentUser) {
+          // setUser(currentUser);
+    
+          // Fetch user's full name from Firestore
+          const userDocRef = doc(db, "users", currentUser.uid);
+          const userDocSnap = await getDoc(userDocRef);
+          if (userDocSnap.exists()) {
+            setfullName(userDocSnap.data().fullName);
+          }
+        } else {
+          // setUser(null);
+          setfullName("");
+        }
+      });
+    
+      return () => unsubscribe(); // Cleanup on unmount
+    }, []);
+  
+
   return (
     <div className={` top-0  h-screen   `}>
 
@@ -23,7 +55,7 @@ export default function RightSideBar({showRightSideBar}:any) {
                 <img src="./images/ProfileImage.png" alt="ProfileImage" className="w-full " loading="lazy"/>
               </div>
               <div className="text-center leading-[140%] mt-[-1rem]">
-                <h3 className="tracking-[-0.478125px] text-[#181819e6] font-bold">Harrison Philips</h3>
+                <h3 className="tracking-[-0.478125px] text-[#181819e6] font-bold">{fullName || "Display Name"}</h3>
                 <p className="text-[#1818196b] tracking-[-0.478125px] text-[0.8rem]">Business analyst</p>
               </div>
 
