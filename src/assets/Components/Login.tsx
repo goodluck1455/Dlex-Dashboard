@@ -85,7 +85,7 @@ export default function Login() {
                             <img src="./images/google.png" alt="" loading="lazy"/>
                         </div>
                         <div>
-                        <p>Sign up with Google</p>
+                        <p>Login with Google</p>
                         </div>
                 </div>
 
