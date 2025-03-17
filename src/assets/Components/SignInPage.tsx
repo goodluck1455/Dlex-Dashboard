@@ -6,6 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useNavbarContext } from "./NavbarContext";
 import {setDoc, doc} from "firebase/firestore"
+// import { div } from "framer-motion/client";
 
 
 
@@ -55,7 +56,12 @@ await updateProfile(user, { displayName: fullName });
 
 
   return (
-    <div className="bg-[#3855B3] h-screen flex justify-center items-center max-sm:px-4">
+    <div className="bg-[#3855B3] h-screen max-sm:h-full">
+      <div className="max-sm:px-4">
+      <h3 className="text-3xl max-sm:text-2xl text-white text-center  py-7 uppercase">Welcome to Dlex Dashboard!</h3>
+      </div>
+    <div className=" flex justify-center items-center max-sm:px-4 max-sm:py-3">
+         
         <div className="bg-[#FFFFFF] rounded-[7.08333px] w-[370.1px] h-fit p-5 max-sm:h-fit ">
             <h3 className="text-center text-[#181819e5] tracking-[-0.382916px] font-bold text-2xl">Sign up</h3>
                 <h3 className="text-[1rem] tracking-[-0.442708px] text-center mt-10">Already Have an account <NavLink to="/Login"><span className="text-[#3855B3] cursor-pointer">   Login </span> </NavLink> </h3>
@@ -142,6 +148,7 @@ await updateProfile(user, { displayName: fullName });
 
        
       
+    </div>
     </div>
   )
 }
