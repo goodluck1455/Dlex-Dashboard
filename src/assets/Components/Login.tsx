@@ -77,7 +77,8 @@ export default function Login() {
     <div className=" flex justify-center items-center max-sm:px-4">
         <div className="bg-[#FFFFFF] rounded-[7.08333px] w-[370.1px] h-[510.89px] p-5 max-sm:h-fit ">
             <h3 className="text-center text-[#181819e5] tracking-[-0.382916px] font-bold text-2xl">Login</h3>
-                <h3 className="text-[1rem] tracking-[-0.442708px] text-center mt-10">Don't have an account yet? <NavLink to="/"> <span className="text-[#3855B3]"> Create an account</span> </NavLink> </h3>
+                <h3 className="text-[1rem] tracking-[-0.442708px] text-center mt-10">Don't have an account yet? <br className="hidden max-sm:block" />
+                   <NavLink to="/"> <span className="text-[#3855B3]"> Create an account</span> </NavLink> </h3>
         
                 <div className="rounded-[3.54167px] cursor-pointer gap-1.5 mx-auto mt-8 p-2 flex items-center justify-center border-[0.885417px] border-[#56575828] w-full h-[ 42.5px]">
                         <div>
