@@ -3,7 +3,7 @@ import { LiaTimesSolid } from "react-icons/lia";
 // import { useState } from "react";
 import { useNavbarContext } from "./NavbarContext";
 import {motion, AnimatePresence } from "framer-motion";
-
+import { useMemo } from "react";
 // import { fadeIn } from "../Components/Variant";
 
 
@@ -15,6 +15,20 @@ export default function SideBar() {
        setNavbar(!navbar)
        // setIsOpen(!isOpen);
     }
+
+    const menuItems = useMemo(
+        () => [
+          { name: "Dashboard", icon: "/images/Dashboard.png" },
+          { name: "Overview", icon: "/images/overview.svg" },
+          { name: "Chat", icon: "/images/Chat.svg", notification: 5 },
+          { name: "User", icon: "/images/User.svg" },
+        ],
+        []
+      );
+    
+
+
+
 
   return (
     <AnimatePresence mode="wait">
@@ -78,7 +92,7 @@ export default function SideBar() {
                 <section>
                     <div className="mt-8">
                     <ul>
-                            <li className="flex items-center gap-4 cursor-pointer mb-5">
+                            {/* <li className="flex items-center gap-4 cursor-pointer mb-5">
                                 <span>
                                     <img src="/images/Dashboard.png" alt=""className="w-[1.5rem]" loading="lazy"/></span>
                                 <span>
@@ -103,9 +117,7 @@ export default function SideBar() {
                                     </div>
                                     </div>
                                 <div className="flex items-center ">
-                                    {/* <div>
-                                    <h1 className="text-[#ffffffb3]  text-[1.2rem]">Chart</h1>
-                                    </div> */}
+                                    
                                    
                                     <div className="rounded-full bg-[#FFA000] w-[15.25px] 
                                     h-[14.44px] flex justify-center  p-3 items-center text-white">5</div>
@@ -117,7 +129,29 @@ export default function SideBar() {
                                 <span>
                                     <h1 className="text-[#ffffffb3]  text-[1.2rem]">User</h1>
                                 </span>
-                            </li>
+                            </li> */}
+
+                {menuItems.map(({ name, icon, notification }) => (
+                <li
+                  key={name}
+                  className="flex items-center justify-between cursor-pointer mb-5"
+                >
+                  <div className="flex items-center gap-4">
+                    <img src={icon} alt={name} className="w-6" loading="lazy" />
+                    <h1 className="text-white font-bold text-lg">{name}</h1>
+                  </div>
+                  {notification && (
+                    <span className="bg-[#FFA000] text-white text-xs rounded-full px-2 py-1">
+                      {notification}
+                    </span>
+                  )}
+                </li>
+              ))}
+
+
+
+
+
                            
                         </ul>
 
@@ -207,28 +241,6 @@ export default function SideBar() {
   )
 }
 
-
-
-// /* Avatar */
-
-// width: 25.68px;
-// height: 25.68px;
-
-
-// /* Inside auto layout */
-// flex: none;
-// order: 0;
-// flex-grow: 0;
-/* base */
-
-// position: absolute;
-// left: 0%;
-// right: 0%;
-// top: 0%;
-// bottom: 0%;
-
-// /* Yellow / 500 */
-// background: #ECD348;
 
 
 

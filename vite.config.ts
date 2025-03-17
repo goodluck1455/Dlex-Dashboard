@@ -10,4 +10,10 @@ export default defineConfig({
     tailwindcss(),
     visualizer({ open: true })
   ],
+
+  build: {
+    chunkSizeWarningLimit: 1000, // Default is 500, increase to 1000 or more
+  }
+
+
 })

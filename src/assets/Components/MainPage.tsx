@@ -2,20 +2,30 @@
 
 import ExamUnit from "../ReUseAbleComponent/ExamUnit"
 import GroupWork from "../ReUseAbleComponent/GroupWork"
-import HomeReadingWork from "../ReUseAbleComponent/HomeReadingWork"
-import SearchBar from "./SearchBar";
-import Navbar from "./Navbar";
+// import HomeReadingWork from "../ReUseAbleComponent/HomeReadingWork"
+// import SearchBar from "./SearchBar";
+// import Navbar from "./Navbar";
 import {motion } from "framer-motion";
-
+import { lazy, Suspense } from "react";
 import { fadeIn } from "../Components/Variant";
 
-import RightSideBar from "./RightSideBar";
+// import RightSideBar from "./RightSideBar";
 import { useNavbarContext } from "./NavbarContext";
 // import { lazy } from "react";
+
+const RightSideBar = lazy(() => import("./RightSideBar"));
+const Navbar = lazy(() => import("./Navbar"));
+const SearchBar = lazy(() => import("./SearchBar"));
+const HomeReadingWork = lazy(() => import("../ReUseAbleComponent/HomeReadingWork"));
 
 // const HomePage = lazy(() => import("./assets/HomePage"));
 // const image = lazy(() => import("./images/overallLogo.svg"));
 
+const SkeletonLoader = () => (
+  <div className="skeleton-container">
+    <div className="skeleton-box"></div>
+  </div>
+);
 
 
 export default function MainPage() {
@@ -50,10 +60,13 @@ export default function MainPage() {
 
             <section className="mt-8">
               <div className="flex gap-8 w-full max-sm:flex-col ">
+                <Suspense fallback={<SkeletonLoader />}> 
                <ExamUnit />
+               </Suspense>
 
+                  <Suspense  fallback={<SkeletonLoader />}>
                <HomeReadingWork />
-
+               </Suspense>
                
 
 
@@ -169,12 +182,15 @@ export default function MainPage() {
        
          </div>
 
+
+          <Suspense fallback={<SkeletonLoader />}>
          <div className={`${rightbar ? "max-lg:block  max-lg:absolute": "max-lg:hidden"}  
          ${rightbar ? "max-sm:block  max-sm:absolute": "max-sm:hidden"} 
          ${rightbar ? "max-xl:block  max-xl:absolute": "max-xl:hidden"} max-lg:z-20`}>
+      
        <RightSideBar  showRightSideBar={showRightSideBar}/>
          </div>
-
+         </Suspense>
 
     </div>
   )
