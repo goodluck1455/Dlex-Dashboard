@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/roboto": "^5.2.5",
     "@tailwindcss/vite": "^4.0.14",
+    "firebase": "^11.4.0",
     "framer-motion": "^12.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
