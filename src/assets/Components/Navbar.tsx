@@ -26,7 +26,7 @@ export default function Navbar() {
         <div className=" flex justify-between items-center mx-2 max-lg:mt-2">
         <div className="flex items-center gap-1">
             <div onClick={showSideBar} className="cursor-pointer">
-                <img src="./images/NavBar.svg" alt="" className="w-[3rem]"/>
+                <img src="./images/NavBar.svg" alt="" className="w-[3rem]" loading="lazy"/>
             </div>
             <div>
             <CiSearch size={25} className="text-[637381]" />
@@ -37,10 +37,10 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-0 ">
             <div className="">
-                <img src="./images/PrileFlag.png" alt="" className="w-full"/>
+                <img src="./images/PrileFlag.png" alt="" className="w-full" loading="lazy"/>
             </div>
                 <div className="p-3 max-lg:p-1 cursor-pointer" onClick={showRightSideBar}>
-                    <img src="./images/MobileProfileLogo.png" alt="" className="w-full" />
+                    <img src="./images/MobileProfileLogo.png" alt="" className="w-full" loading="lazy" />
                 </div>
         </div>
         </div>

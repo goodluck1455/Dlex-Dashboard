@@ -62,7 +62,7 @@ await updateProfile(user, { displayName: fullName });
         
                 <div className="rounded-[3.54167px] cursor-pointer gap-1.5 mx-auto mt-8 p-2 flex items-center justify-center border-[0.885417px] border-[#56575828] w-full h-[ 42.5px]">
                         <div>
-                            <img src="./images/google.png" alt="" />
+                            <img src="./images/google.png" alt="" loading="lazy"/>
                         </div>
                         <div>
                         <p>Sign up with Google</p>

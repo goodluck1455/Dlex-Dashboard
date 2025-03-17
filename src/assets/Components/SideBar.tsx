@@ -32,7 +32,7 @@ export default function SideBar() {
       <section className="ml-[1rem] mr-[1rem] mt-[2rem] ">
           <div className="flex items-center text-white gap-1 place-items-center">
             <div>
-                <img src="/images/Mlogo.png" alt=""  className="w-full"/>
+                <img src="/images/Mlogo.png" alt=""  className="w-full" loading="lazy"/>
             </div>
             <div>
                 <p className="text-2xl font-bold">Dlex</p>
@@ -69,7 +69,7 @@ export default function SideBar() {
                         </div>
 
                         <div className="cursor-pointer">
-                            <img src="/images/Button-icon.svg" alt="" className="w-[2rem]"/>
+                            <img src="/images/Button-icon.svg" alt="" className="w-[2rem]" loading="lazy"/>
                         </div>
 
                     </div>
@@ -80,14 +80,14 @@ export default function SideBar() {
                     <ul>
                             <li className="flex items-center gap-4 cursor-pointer mb-5">
                                 <span>
-                                    <img src="/images/Dashboard.png" alt=""className="w-[1.5rem]" /></span>
+                                    <img src="/images/Dashboard.png" alt=""className="w-[1.5rem]" loading="lazy"/></span>
                                 <span>
                                     <h1 className="text-white font-bold text-[1.2rem]">Dashboard</h1>
                                 </span>
                             </li>
                             <li className="flex items-center gap-4 cursor-pointer mb-5">
                                 <span>
-                                    <img src="/images/overview.svg" alt=""className="w-[1.5rem]" /></span>
+                                    <img src="/images/overview.svg" alt=""className="w-[1.5rem]" loading="lazy" /></span>
                                 <span>
                                     <h1 className="text-[#ffffffb3]  text-[1.2rem] font-roboto">Overview</h1>
                                 </span>
@@ -95,7 +95,7 @@ export default function SideBar() {
                             <li className="flex items-center justify-between gap-4 cursor-pointer mb-5">
                                 <div className="flex items-center gap-4">
                                     <div>
-                                    <img src="/images/Chat.svg" alt=""className="w-[1.5rem]" />
+                                    <img src="/images/Chat.svg" alt=""className="w-[1.5rem]" loading="lazy" />
                                     </div>
                                   
                                     <div>
@@ -113,7 +113,7 @@ export default function SideBar() {
                             </li>
                             <li className="flex items-center gap-4 cursor-pointer mb-3">
                                 <span>
-                                    <img src="/images/User.svg" alt=""className="w-[1.5rem]" /></span>
+                                    <img src="/images/User.svg" alt=""className="w-[1.5rem]" loading="lazy" /></span>
                                 <span>
                                     <h1 className="text-[#ffffffb3]  text-[1.2rem]">User</h1>
                                 </span>
@@ -133,21 +133,21 @@ export default function SideBar() {
                         <ul className="mt-5">
                             <li className="flex items-center gap-4 cursor-pointer mb-5">
                                 <span>
-                                    <img src="/images/tasks.svg" alt=""className="w-[1.5rem]" /></span>
+                                    <img src="/images/tasks.svg" alt=""className="w-[1.5rem]" loading="lazy"/></span>
                                 <span>
                                     <h1 className="text-[#ffffffb3]  text-[1.2rem]">Tasks</h1>
                                 </span>
                             </li>
                             <li className="flex items-center gap-4 cursor-pointer mb-5">
                                 <span>
-                                    <img src="/images/report.svg" alt=""className="w-[1.5rem]" /></span>
+                                    <img src="/images/report.svg" alt=""className="w-[1.5rem]" loading="lazy" /></span>
                                 <span>
                                     <h1 className="text-[#ffffffb3]  text-[1.2rem]">Report</h1>
                                 </span>
                             </li>
                             <li className="flex items-center gap-4 cursor-pointer mb-5">
                                 <span>
-                                    <img src="/images/Setting.svg" alt=""className="w-[1.5rem]" /></span>
+                                    <img src="/images/Setting.svg" alt=""className="w-[1.5rem]" loading="lazy" /></span>
                                 <span>
                                     <h1 className="text-[#ffffffb3]  text-[1.2rem]">Settings</h1>
                                 </span>
@@ -185,7 +185,7 @@ export default function SideBar() {
                                         w-full h-[56.17px] flex items-center gap-2">
 
                         <div className="flex items-center gap-2.5 ">
-                            <img src="/images/img.svg" alt="" />
+                            <img src="/images/img.svg" alt="" loading="lazy" />
                             <p className="text-[0.9rem] text-[#FFFFFF] 
                             font-bold tracking-[-0.240723px]">Jane Smith</p>
                         </div>
@@ -193,7 +193,7 @@ export default function SideBar() {
                        
 
                         <div className="cursor-pointer">
-                            <img src="/images/Button-icon.svg" alt="" className="w-[2rem]"/>
+                            <img src="/images/Button-icon.svg" alt="" className="w-[2rem]" loading="lazy"/>
                         </div>
 
                     </div> 

@@ -11,6 +11,12 @@ import { fadeIn } from "../Components/Variant";
 
 import RightSideBar from "./RightSideBar";
 import { useNavbarContext } from "./NavbarContext";
+// import { lazy } from "react";
+
+// const HomePage = lazy(() => import("./assets/HomePage"));
+// const image = lazy(() => import("./images/overallLogo.svg"));
+
+
 
 export default function MainPage() {
 
@@ -103,7 +109,7 @@ export default function MainPage() {
                       <p className="text-[#3855b3e6] tracking-[-0.286875px]">Explore more</p>
                       </div>
                       <div>
-                        <img src="./images/arrowRightBlue.svg" alt="" />
+                        <img src="./images/arrowRightBlue.svg" alt="" loading="lazy" />
                       </div>
                     </div>
                     
@@ -125,7 +131,7 @@ export default function MainPage() {
               <div className="bg-[#FFFFFF] flex items-center justify-between  px-4 border-[#E6E7E9] border-[0.95625px] rounded-[11.475px] w-full h-[84.15px]">
                 <div className="flex gap-2 items-center mt-3">
                 <div className="">
-                  <img src="./images/Grammer.svg" alt="" />
+                  <img src="./images/Grammer.svg" alt="" loading="lazy" />
                 </div>
                 <div>
                   <h3 className="text-[]">Grammer</h3>
@@ -142,7 +148,7 @@ export default function MainPage() {
               <div className="bg-[#FFFFFF] flex items-center justify-between px-4 border-[#E6E7E9] border-[0.95625px] rounded-[11.475px] w-full h-[84.15px]">
                 <div className="flex items-center  gap-2 mt-3">
               <div className="">
-                  <img src="./images/Dictionary.svg" alt="" />
+                  <img src="./images/Dictionary.svg" alt="" loading="lazy"/>
                 </div>
                 <div>
                   <h3 className="text-[]">Dictionary</h3>
