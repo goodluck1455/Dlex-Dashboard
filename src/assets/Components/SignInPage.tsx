@@ -62,7 +62,7 @@ await updateProfile(user, { displayName: fullName });
       </div>
     <div className=" flex justify-center items-center max-sm:px-4 max-sm:py-3">
          
-        <div className="bg-[#FFFFFF] rounded-[7.08333px] w-[370.1px] h-fit p-5 max-sm:h-fit ">
+        <div className="bg-[#FFFFFF] rounded-[7.08333px] w-[370.1px] h-fit p-5 max-sm:h-fit mb-2.5 ">
             <h3 className="text-center text-[#181819e5] tracking-[-0.382916px] font-bold text-2xl">Sign up</h3>
                 <h3 className="text-[1rem] tracking-[-0.442708px] text-center mt-10">Already Have an account 
                   <NavLink to="/Login"><span className="text-[#3855B3] cursor-pointer">   Login </span> </NavLink> </h3>
