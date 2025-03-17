@@ -14,7 +14,7 @@ export default function GroupWork() {
             whileInView={"show"}
          
          
-         className="bg-[#FFFFFF]  border-[0.95625px] rounded-[7.65px] px-[2rem]
+         className="bg-[#FFFFFF]  border-[0.95625px] rounded-[7.65px] px-[2rem] overflow-hidden
                  h-[276.36px] border-[#E6E7E9] w-full">
                       <div className="flex justify-between items-center">
                 <div>

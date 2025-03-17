@@ -43,7 +43,7 @@ export default function MainPage() {
 
 
   return (
-    <div className=" flex gap-8 SideBar___body  top-0 left-0 h-screen  max-xl:gap-1 max-2xl:gap-2
+    <div className=" flex gap-8 SideBar___body  top-0 left-0 h-screen  max-xl:gap-1 max-2xl:gap-2 
     scrollbar-hide max-sm:justify-center max-sm:gap-0">
 
           
@@ -77,7 +77,7 @@ export default function MainPage() {
 
             <section>
 
-              <div className="mt-8 flex gap-6 items-center max-sm:flex-col">
+              <div className="mt-8 flex gap-6 items-center max-sm:flex-col overflow-hidden">
 
                <GroupWork />
 

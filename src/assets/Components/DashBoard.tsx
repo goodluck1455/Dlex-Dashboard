@@ -38,7 +38,7 @@ export default function DashBoard() {
 
     
 
-      <div className="flex-grow-1">
+      <div className="flex-grow-1 ">
         {/* <RightSideBar /> */}
         <MainPage />
       </div>
