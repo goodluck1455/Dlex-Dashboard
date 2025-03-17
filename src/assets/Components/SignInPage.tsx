@@ -96,7 +96,7 @@ await updateProfile(user, { displayName: fullName });
 
                             <div className="mb-4">
 
-                          <span className="flex justify-between"> <label htmlFor="">Full Name</label> <label htmlFor="" className="text-[#3855B3] cursor-pointer tracking-[-0.442708px] text-[12.3958px]">Remember me</label></span>
+                           <label htmlFor="">Full Name</label> 
                           <input type="text" 
                           value={fullName}
                           onChange={(e) => setfullName(e.target.value)}
