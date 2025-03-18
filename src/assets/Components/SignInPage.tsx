@@ -88,7 +88,7 @@ await updateProfile(user, { displayName: fullName });
 
 
   return (
-    <div className="bg-[#3855B3] h-screen max-sm:h-full">
+    <div className="bg-[#3855B3] h-full max-sm:h-full">
       <div className="max-sm:px-4">
       <h3 className="text-3xl max-sm:text-2xl text-white text-center  py-7 uppercase">Welcome to Dlex Dashboard!</h3>
       </div>
