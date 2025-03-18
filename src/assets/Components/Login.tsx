@@ -4,7 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../firebaseConfig";
 import { toast, ToastContainer } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
-
+import { FirebaseError } from "firebase/app";
 import { useEffect, useState } from "react";
 // import { auth, db } from "../firebaseConfig";
 import { onAuthStateChanged } from "firebase/auth";
@@ -27,6 +27,30 @@ export default function Login() {
 //   const [user, setUser] = useState(null);
 
   const { setfullName} = useNavbarContext()
+
+
+  const getErrorMessage = (error: FirebaseError): string => {
+    const errorMessages: Record<string, string> = {
+      "auth/email-already-in-use": "This email is already registered. Try logging in.",
+     "auth/user-disabled": "This account has been disabled. Contact support.",
+     "auth/too-many-requests": "Too many failed attempts. Please try again later.",
+      "auth/user-not-found": "No account found with this email. Please sign up.",
+      "auth/wrong-password": "Incorrect password. Please try again.",
+      "auth/network-request-failed": "Network error. Please check your connection.",
+      "auth/invalid-credential": "Invalid email or password. Please try again.",
+    };
+  
+    return errorMessages[error.code] || "An unexpected error occurred.";
+  };
+
+
+  const googleSigin = ()=>{
+    toast.info("Login with Google coming soon, Please Login with your email and password");
+   }
+
+   const rememberPasw = ()=>{
+    toast.info("Coming soon, pls contact support team @, goodluckstephen237@gmail.com");
+   }
   
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser?:any) => {
@@ -60,7 +84,12 @@ export default function Login() {
       toast.success("Login successful!");
       navigate("/dashboard"); 
     } catch (error: any) {
-      toast.error(error.message);
+      if (error instanceof FirebaseError) {
+        const message = getErrorMessage(error);
+        toast.error(message);
+      } else {
+        toast.error("An unexpected error occurred.");
+      }
     } finally {
       setLoading(false);
     }
@@ -69,7 +98,7 @@ export default function Login() {
 
 
   return (
-      <div className="bg-[#3855B3] h-full max-sm:h-full"> 
+      <div className="bg-[#3855B3] h-screen max-sm:h-full"> 
        <div className="max-sm:px-4">
       <h3 className="text-3xl max-sm:text-2xl text-white text-center  py-7 uppercase">Welcome Back to Dlex!</h3>
       </div>
@@ -80,7 +109,10 @@ export default function Login() {
                 <h3 className="text-[1rem] tracking-[-0.442708px] text-center mt-10">Don't have an account yet? <br className="hidden max-sm:block" />
                    <NavLink to="/"> <span className="text-[#3855B3]"> Create an account</span> </NavLink> </h3>
         
-                <div className="rounded-[3.54167px] cursor-pointer gap-1.5 mx-auto mt-8 p-2 flex items-center justify-center border-[0.885417px] border-[#56575828] w-full h-[ 42.5px]">
+                <div 
+                
+                onClick={googleSigin}
+                className="rounded-[3.54167px] cursor-pointer gap-1.5 mx-auto mt-8 p-2 flex items-center justify-center border-[0.885417px] border-[#56575828] w-full h-[ 42.5px]">
                         <div>
                             <img src="./images/google.png" alt="" loading="lazy"/>
                         </div>
@@ -118,7 +150,7 @@ export default function Login() {
 
                         <div>
 
-                        <span className="flex justify-between"> <label htmlFor="">Password</label> <label htmlFor="" className="text-[#3855B3] cursor-pointer tracking-[-0.442708px] text-[12.3958px]">Remember me</label></span>
+                        <span className="flex justify-between"> <label htmlFor="">Password</label> <label   onClick={rememberPasw} htmlFor="" className="text-[#3855B3] cursor-pointer tracking-[-0.442708px] text-[12.3958px]">Remember me</label></span>
                         <input type="password" 
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -126,7 +158,9 @@ export default function Login() {
                         
                         className="w-full border-[0.885417px] outline-none border-[#E6E7E9] p-3 rounded-[3.54167px] "  placeholder=""/>
                         </div>
-                        <div className="flex items-center gap-1">
+                        <div 
+                      
+                        className="flex items-center gap-1">
                             <input type="checkbox" name="" id="" /> <label htmlFor="" className="text-[#181819e5] 
                            text-[12.3958px] tracking-[-0.442708px]">Keep me logged in</label>
                         </div>

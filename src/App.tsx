@@ -5,6 +5,7 @@ import DashBoard from "./assets/Components/DashBoard"
 import { NavbarProvider } from "./assets/Components/NavbarContext"
 import Login from './assets/Components/Login';
 import SignInPage from './assets/Components/SignInPage';
+import NotFound from './assets/Components/NotFound';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
           <Route index element={<SignInPage />} />
           <Route path="/dashboard" Component={DashBoard } />
           <Route path="/Login" Component={Login } />
-          
+          <Route path="*" Component={ NotFound } />
         </Routes>
        </NavbarProvider>
        </BrowserRouter>

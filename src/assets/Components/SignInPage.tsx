@@ -1,4 +1,8 @@
 "use client";
+
+// import { AuthError } from "firebase/auth";
+import { FirebaseError } from "firebase/app";
+
 import { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "../firebaseConfig";
@@ -23,6 +27,29 @@ export default function SignInPage() {
 
   const {fullName, setfullName} = useNavbarContext()
 
+
+  const getErrorMessage = (error: FirebaseError): string => {
+    const errorMessages: Record<string, string> = {
+      "auth/email-already-in-use": "This email is already registered. Try logging in.",
+      "auth/too-many-requests": "Too many failed attempts. Please contact team support.",
+      "auth/invalid-email": "Please enter a valid email address.",
+      "auth/weak-password": "Your password must be at least 6 characters long.",
+      "auth/network-request-failed": "Network error. Please check your connection.",
+    };
+  
+    return errorMessages[error.code] || "An unexpected error occurred.";
+  };
+
+
+
+
+   const googleSigin = ()=>{
+    toast.info("Sigin with Google coming soon, Pls fill the form");
+   }
+
+
+
+
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -46,8 +73,13 @@ await updateProfile(user, { displayName: fullName });
 
       toast.success("Login successful!");
       navigate("/Login"); 
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error) {
+      if (error instanceof FirebaseError) {
+        const message = getErrorMessage(error);
+        toast.error(message);
+      } else {
+        toast.error("An unexpected error occurred.");
+      }
     } finally {
       setLoading(false);
     }
@@ -67,7 +99,10 @@ await updateProfile(user, { displayName: fullName });
                 <h3 className="text-[1rem] tracking-[-0.442708px] text-center mt-10">Already Have an account 
                   <NavLink to="/Login"><span className="text-[#3855B3] cursor-pointer">   Login </span> </NavLink> </h3>
         
-                <div className="rounded-[3.54167px] cursor-pointer gap-1.5 mx-auto mt-8 p-2 flex items-center justify-center border-[0.885417px] border-[#56575828] w-full h-[ 42.5px]">
+                <div 
+                
+                onClick={googleSigin}
+                className="rounded-[3.54167px] cursor-pointer gap-1.5 mx-auto mt-8 p-2 flex items-center justify-center border-[0.885417px] border-[#56575828] w-full h-[ 42.5px]">
                         <div>
                             <img src="./images/google.png" alt="" loading="lazy"/>
                         </div>
@@ -121,7 +156,7 @@ await updateProfile(user, { displayName: fullName });
 
                         <div>
 
-                        <span className="flex justify-between"> <label htmlFor="">Password</label> <label htmlFor="" className="text-[#3855B3] cursor-pointer tracking-[-0.442708px] text-[12.3958px]">Remember me</label></span>
+                        <label htmlFor="">Password</label> 
                         <input type="password" 
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -130,7 +165,7 @@ await updateProfile(user, { displayName: fullName });
                         className="w-full border-[0.885417px] outline-none border-[#E6E7E9] p-3 rounded-[3.54167px] "  placeholder=""/>
                         </div>
                         <div className="flex items-center gap-1">
-                            <input type="checkbox" name="" id="" /> <label htmlFor="" className="text-[#181819e5] 
+                            <input type="checkbox" name="" id="" required /> <label htmlFor="" className="text-[#181819e5] 
                            text-[12.3958px] tracking-[-0.442708px]">Keep me logged in</label>
                         </div>
                       
