@@ -5,7 +5,11 @@ import { useNavbarContext } from "./NavbarContext";
 import {motion, AnimatePresence } from "framer-motion";
 import { useMemo } from "react";
 // import { fadeIn } from "../Components/Variant";
-
+import { auth, db } from "../firebaseConfig";
+import { onAuthStateChanged } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+// import { useNavbarContext } from "./NavbarContext";
+import { useEffect } from "react";
 
 export default function SideBar() {
     const {navbar, setNavbar} = useNavbarContext();
@@ -15,6 +19,37 @@ export default function SideBar() {
        setNavbar(!navbar)
        // setIsOpen(!isOpen);
     }
+
+
+ const {fullName, setfullName} = useNavbarContext();
+
+   
+  // const user = auth.currentUser;
+  
+    useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, async (currentUser?:any) => {
+        if (currentUser) {
+          // setUser(currentUser);
+    
+          // Fetch user's full name from Firestore
+          const userDocRef = doc(db, "users", currentUser.uid);
+          const userDocSnap = await getDoc(userDocRef);
+          if (userDocSnap.exists()) {
+            setfullName(userDocSnap.data().fullName);
+          }
+        } else {
+          // setUser(null);
+          setfullName("");
+        }
+      });
+    
+      return () => unsubscribe(); // Cleanup on unmount
+    }, []);
+
+
+
+
+
 
     const menuItems = useMemo(
         () => [
@@ -221,7 +256,7 @@ export default function SideBar() {
                         <div className="flex items-center gap-2.5 ">
                             <img src="/images/img.svg" alt="" loading="lazy" />
                             <p className="text-[0.9rem] text-[#FFFFFF] 
-                            font-bold tracking-[-0.240723px]">Jane Smith</p>
+                            font-bold tracking-[-0.240723px]">{fullName || "Display Name"}</p>
                         </div>
 
                        
