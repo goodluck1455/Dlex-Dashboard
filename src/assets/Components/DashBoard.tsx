@@ -28,9 +28,7 @@ export default function DashBoard() {
    
 <div className="">
 <SideBar />
-   
-   {/* <MainPage /> */}
-
+ 
 </div>
    
  
