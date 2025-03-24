@@ -127,44 +127,7 @@ export default function SideBar() {
                 <section>
                     <div className="mt-8">
                     <ul>
-                            {/* <li className="flex items-center gap-4 cursor-pointer mb-5">
-                                <span>
-                                    <img src="/images/Dashboard.png" alt=""className="w-[1.5rem]" loading="lazy"/></span>
-                                <span>
-                                    <h1 className="text-white font-bold text-[1.2rem]">Dashboard</h1>
-                                </span>
-                            </li>
-                            <li className="flex items-center gap-4 cursor-pointer mb-5">
-                                <span>
-                                    <img src="/images/overview.svg" alt=""className="w-[1.5rem]" loading="lazy" /></span>
-                                <span>
-                                    <h1 className="text-[#ffffffb3]  text-[1.2rem] font-roboto">Overview</h1>
-                                </span>
-                            </li>
-                            <li className="flex items-center justify-between gap-4 cursor-pointer mb-5">
-                                <div className="flex items-center gap-4">
-                                    <div>
-                                    <img src="/images/Chat.svg" alt=""className="w-[1.5rem]" loading="lazy" />
-                                    </div>
-                                  
-                                    <div>
-                                    <h1 className="text-[#ffffffb3]  text-[1.2rem]">Chart</h1>
-                                    </div>
-                                    </div>
-                                <div className="flex items-center ">
-                                    
-                                   
-                                    <div className="rounded-full bg-[#FFA000] w-[15.25px] 
-                                    h-[14.44px] flex justify-center  p-3 items-center text-white">5</div>
-                                </div>
-                            </li>
-                            <li className="flex items-center gap-4 cursor-pointer mb-3">
-                                <span>
-                                    <img src="/images/User.svg" alt=""className="w-[1.5rem]" loading="lazy" /></span>
-                                <span>
-                                    <h1 className="text-[#ffffffb3]  text-[1.2rem]">User</h1>
-                                </span>
-                            </li> */}
+                          
 
                 {menuItems.map(({ name, icon, notification }) => (
                 <li
