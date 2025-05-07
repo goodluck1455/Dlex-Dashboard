@@ -1,14 +1,14 @@
 "use client";
 // import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from "../firebaseConfig";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, db, googleProvider  } from "../firebaseConfig";
 import { toast, ToastContainer } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FirebaseError } from "firebase/app";
 import { useEffect, useState } from "react";
 // import { auth, db } from "../firebaseConfig";
 import { onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { useNavbarContext } from "./NavbarContext";
 
 
@@ -44,9 +44,32 @@ export default function Login() {
   };
 
 
-  const googleSigin = ()=>{
-    toast.info("Login with Google coming soon, Please Login with your email and password");
-   }
+  const googleSigin = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+  
+      // Check if user exists in Firestore
+      const userRef = doc(db, "users", user.uid);
+      const userSnap = await getDoc(userRef);
+  
+      if (!userSnap.exists()) {
+        // Store new user data
+        await setDoc(userRef, {
+          fullName: user.displayName,
+          email: user.email,
+          uid: user.uid,
+          createdAt: new Date()
+        });
+      }
+  
+      toast.success("Logged in with Google successfully!");
+      navigate("/Dashboard"); // or your app's homepage
+    } catch (error) {
+      toast.error("Google login failed.");
+      console.error(error);
+    }
+  };
 
    const rememberPasw = ()=>{
     toast.info("Coming soon, pls contact support team @, goodluckstephen237@gmail.com");

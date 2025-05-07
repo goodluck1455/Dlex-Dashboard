@@ -4,8 +4,8 @@
 import { FirebaseError } from "firebase/app";
 
 import { useState } from "react";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, db } from "../firebaseConfig";
+import { createUserWithEmailAndPassword, updateProfile, signInWithPopup  } from "firebase/auth";
+import { auth, db, googleProvider } from "../firebaseConfig";
 import { toast, ToastContainer } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useNavbarContext } from "./NavbarContext";
@@ -43,9 +43,29 @@ export default function SignInPage() {
 
 
 
-   const googleSigin = ()=>{
-    toast.info("Sigin with Google coming soon, Pls fill the form");
-   }
+   const googleSigin = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+  
+      // Optional: Save to Firestore if needed
+      await setDoc(doc(db, "users", user.uid), {
+        fullName: user.displayName,
+        email: user.email,
+        uid: user.uid,
+        createdAt: new Date()
+      });
+  
+      toast.success("Signed in with Google successfully!");
+      navigate("/Dashboard"); // or your desired route
+    } catch (error) {
+      if (error instanceof FirebaseError) {
+        toast.error(error.message);
+      } else {
+        toast.error("An unexpected error occurred during Google sign-in.");
+      }
+    }
+  };
 
 
 
